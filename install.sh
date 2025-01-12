@@ -16,6 +16,7 @@ echo "# One click Install ShadowsocksR Server                     #"
 echo "# Intro: https://shadowsocks.be/9.html                      #"
 echo "# Original Author: Teddysun <i@teddysun.com>                #"
 echo "# Updated Author (me): Samrand <me@samrand.me>              #"
+echo "# Best and Cheap VPS for 4\$: https://bit.ly/ssr_vps        #"
 echo "#############################################################"
 echo
 echo "The default choices are the best to bypass firewalls and being undetected."
@@ -467,6 +468,12 @@ install(){
 
         /etc/init.d/shadowsocks start
 
+        encoded_password=$(echo -n "${shadowsockspwd}" | base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+        # Prepare the SSR configuration string
+        ssr_config="$(get_ip):${shadowsocksport}:${shadowsockprotocol}:${shadowsockscipher}:${shadowsockobfs}:${encoded_password}"
+        # Base64 encode the entire configuration
+        ssr_link="ssr://$(echo -n "$ssr_config" | base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n')"
+
         clear
         echo
         echo -e "Congratulations, ShadowsocksR server install completed!"
@@ -476,6 +483,7 @@ install(){
         echo -e "Your Protocol         : \033[41;37m ${shadowsockprotocol} \033[0m"
         echo -e "Your obfs             : \033[41;37m ${shadowsockobfs} \033[0m"
         echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
+        echo -e "Your SSR Link         : \033[41;37m ${ssr_link} \033[0m"
         echo
         echo "Enjoy it!"
         echo
