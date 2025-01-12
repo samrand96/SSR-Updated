@@ -5,6 +5,8 @@ This script allows you to quickly install or uninstall a **ShadowsocksR Server**
 ---
 
 ## **Requirements**
+- VPS
+  - I strongly recommend [Hetzner](https://bit.ly/ssr_vps) They offer: 2 CPU - 4 GB RAM - 20 TB Traffic - IPv4 & IPv6 for only 4.5$, for Signup: [https://bit.ly/ssr_vps](https://bit.ly/ssr_vps)
 - Supported operating systems:
   - CentOS 6, 7, or later.
   - Debian 7 or later.
