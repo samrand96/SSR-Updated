@@ -13,7 +13,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the ShadowsocksR script to the container
-COPY install_ssr.sh /usr/local/bin/install_ssr.sh
+COPY install.sh /usr/local/bin/install_ssr.sh
 RUN chmod +x /usr/local/bin/install_ssr.sh
 
 # Expose the default ShadowsocksR ports
