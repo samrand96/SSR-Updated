@@ -461,9 +461,6 @@ install(){
                 echo "Failed to download the file. Please check the URL or permissions."
                 exit 2
             fi
-        else
-            echo "Python version is less than 3.10. Aborting."
-            exit 3
         fi
 
         /etc/init.d/shadowsocks start
