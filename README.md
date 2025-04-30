@@ -33,7 +33,7 @@ Follow the steps below to install ShadowsocksR:
 
 1. **Download the Installation Script**:
    ```bash
-   wget https://raw.githubusercontent.com/samrand96/SSR-Updated/refs/heads/main/install.sh -O install-shadowsocksr.sh
+   wget https://raw.githubusercontent.com/samrand96/ShadowsocksR/refs/heads/main/install.sh -O install-shadowsocksr.sh
    ```
 
 2. **Make the Script Executable**:
